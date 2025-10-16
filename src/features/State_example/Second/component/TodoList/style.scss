@@ -1,0 +1,56 @@
+$primary-color: #4a90e2;
+$hover-bg: #e9f0ff;
+$border-color: #ddd;
+$list-bg: #f9f9f9;
+
+.styled-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 320px;
+  background-color: $list-bg;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  li {
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    button {
+      all: unset;
+      width: 100%;
+      display: block;
+      padding: 14px 18px;
+      font-size: 16px;
+      color: #333;
+      background: none;
+      cursor: pointer;
+      text-align: left;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+
+      &::before {
+        content: "•";
+        color: $primary-color;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: $hover-bg;
+        color: $primary-color;
+      }
+      
+    }
+    
+  }
+  
+}
+.check{
+        background-color: black;
+      }

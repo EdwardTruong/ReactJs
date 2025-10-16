@@ -1,0 +1,17 @@
+.folder-structure {
+  font-family: monospace;
+  list-style-type: none;
+  line-height: 1.4;
+
+  li {
+    position: relative;
+    padding-left: 1em;
+
+    &::before {
+      content: "|__";
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+  }
+}
