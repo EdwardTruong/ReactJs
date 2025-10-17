@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.scss";
 export interface AlbumItem {
   id: number;
   name: string;

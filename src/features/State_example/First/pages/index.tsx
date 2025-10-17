@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import BlackButton from "../../../../components/oldButton/BlackButton";
 
 function FirstState() {
@@ -51,6 +51,20 @@ function FirstState() {
       <button onClick={() => setColor("red")}>Change to red</button>
       <button onClick={() => setColor("yellow")}>Change to red</button>
       <button onClick={() => setColor("green")}>Change to green</button>
+      <br></br>
+      <NavLink to="/albums">
+        AlBum - active mặc định. click vào nó sẽ hiển thị ra class ="active" F12
+        lên xem
+      </NavLink>
+      <br></br>
+      <NavLink
+        to="/state"
+        className={({ isActive }) => (isActive ? "active-menu" : "")}
+      >
+        State - active custom. click vào nó sẽ hiển thị ra class ="active-menu"
+        F12 lên xem . Đặc biệt cái này là của typeScript và react v6
+      </NavLink>
+      <br></br>
 
       <BlackButton onClick={() => navigate("/")}>HomePage</BlackButton>
     </div>

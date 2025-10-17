@@ -2,7 +2,7 @@ import React from "react";
 import AlbumList from "../AlbumList";
 import type { AlbumItem } from "../AlbumItem";
 import BlackButton from "../../../components/oldButton/BlackButton";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function AlBuns() {
   // Theo thông thường đây chính là nơi gọi API.
@@ -59,6 +59,22 @@ function AlBuns() {
     <div>
       <h1>Danh sách albums</h1>
       <AlbumList listAlbum={listAlbum}></AlbumList>
+
+      <br />
+      <NavLink to="/albums">
+        AlBum - active mặc định. click vào nó sẽ hiển thị ra class ="active" F12
+        lên xem
+      </NavLink>
+      <br></br>
+      <NavLink
+        to="/state"
+        className={({ isActive }) => (isActive ? "active-menu" : "")}
+      >
+        State - active custom. click vào nó sẽ hiển thị ra class ="active-menu"
+        F12 lên xem . Đặc biệt cái này là của typeScript và react v6
+      </NavLink>
+      <br></br>
+
       <BlackButton onClick={() => navigate("/")}>HomePage</BlackButton>
     </div>
   );

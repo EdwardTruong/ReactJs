@@ -2,6 +2,7 @@
 import { useCallback, useState } from "react";
 import TodoList from "../../Second/component/TodoList";
 import type { Item } from "../../Second/component/TodoItem";
+import { Link, NavLink } from "react-router-dom";
 
 const initTodoList: Item[] = [
   { id: 1, title: "Yolo", status: "check" },
@@ -60,6 +61,27 @@ function TodoListNew() {
       <h3>TodoListNew</h3>
       <TodoList items={filterTodoList} clickAItem={changeStatus}></TodoList>
       <br></br>
+      {/* Ví dụ về Link và NavLink */}
+      <Link to="/stateRemakeTodo">Remake Todo </Link>
+      <br></br>
+      <Link to="/state">State </Link>
+      <br></br>
+      <Link to="/albums">Album </Link>
+      <br></br>
+      <NavLink to="/albums">
+        AlBum - active mặc định. click vào nó sẽ hiển thị ra class ="active" F12
+        lên xem
+      </NavLink>
+      <br></br>
+      <NavLink
+        to="/state"
+        className={({ isActive }) => (isActive ? "active-menu" : "")}
+      >
+        State - active custom. click vào nó sẽ hiển thị ra class ="active-menu"
+        F12 lên xem . Đặc biệt cái này là của typeScript và react v6
+      </NavLink>
+      <br></br>
+
       <button onClick={handleShowAll}>Show All</button>
       <button onClick={handleShowCheck}>Show Checked</button>
       <button onClick={handleShowUnCheck}>Show Unchecked</button>
