@@ -68,6 +68,7 @@ function TodoListNew() {
       <br></br>
       <Link to="/albums">Album </Link>
       <br></br>
+      {/* Ví dụ về NavLink */}
       <NavLink to="/albums">
         AlBum - active mặc định. click vào nó sẽ hiển thị ra class ="active" F12
         lên xem
